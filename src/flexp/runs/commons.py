@@ -82,7 +82,8 @@ def make_common_data(
             transform=torchvision.transforms.Compose([
                 *augmentation,
                 torchvision.transforms.ToTensor()
-            ])
+            ]),
+            download=True
         )
         test_set = CIFAR100(
             root=global_config.TORCHVISION_ROOT,
