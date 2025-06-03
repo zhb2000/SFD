@@ -29,7 +29,7 @@ def run(
     batch_size: int,
     weight_decay: float,
     save_to_ckpt: bool = True,
-    run_record=RunRecord(print_type_args=['safs_dataset'])
+    run_record=RunRecord(print_type_args=['syn_dataset'])
 ):
     print(run_record)
     device = torch.device(device)
@@ -110,6 +110,8 @@ def run(
             finetune_checkpoint,
             os.path.join(result_folder, 'finetuned.pt')
         )
+    else:
+        result_folder = None
 
     return {
         'result_folder': result_folder,
